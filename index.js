@@ -1,9 +1,42 @@
 import chalk from "chalk";
-const log = console.log;
-const paragrafo = "Texto retornado de uma função";
+import fs from "fs";
 
-function texto(string) {
-  return string;
+function handleError(error) {
+  throw new Error(chalk.red(error.code, "não há arquivo no caminho"));
 }
 
-log(chalk.blue(texto(paragrafo)));
+async function getFile(filePath) {
+  const encoding = "utf-8";
+  try {
+    const text = await fs.promises.readFile(filePath, encoding);
+    console.log(chalk.green(text));
+  } catch (error) {
+    handleError(error);
+  } finally {
+    console.log("Fim da Função 'getFile'");
+  }
+}
+
+// function getFile(filePath) {
+//   const encoding = "utf-8";
+//   fs.promises
+//     .readFile(filePath, encoding)
+//     .then((text) => {
+//       console.log(chalk.green(text));
+//     })
+//     .catch((error) => {
+//       handleError(error);
+//     });
+// }
+
+// function getFile(filePath) {
+//   const encoding = "utf-8";
+//   fs.readFile(filePath, encoding, (error, text) => {
+//     if (error) {
+//       handleError(error);
+//     }
+//     console.log(chalk.green(text));
+//   });
+// }
+
+getFile("./arquivos/texto1.md");
