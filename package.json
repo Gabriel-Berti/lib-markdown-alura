@@ -1,0 +1,24 @@
+{
+  "name": "curso-node-library-alura",
+  "version": "1.0.0",
+  "description": "## Markdown Library",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielrberti/lib-markdown-alura.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielrberti/lib-markdown-alura/issues"
+  },
+  "homepage": "https://github.com/gabrielrberti/lib-markdown-alura#readme",
+  "dependencies": {
+    "chalk": "^5.1.2"
+  }
+}
